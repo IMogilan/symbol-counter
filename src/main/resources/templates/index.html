@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <meta charset="UTF-8">
+        <title th:text="#{home.page.title}"></title>
+
+<!--    FAVICON-->
+        <link rel="apple-touch-icon" sizes="180x180" th:href="@{/images/favicon/apple-touch-icon.png}">
+        <link rel="icon" type="image/png" sizes="32x32" th:href="@{/images/favicon/favicon-32x32.png}">
+        <link rel="icon" type="image/png" sizes="16x16" th:href="@{/images/favicon/favicon-16x16.png}">
+        <link rel="manifest" th:href="@{/images/favicon/site.webmanifest}">
+
+<!--    BOOTSTRAP 5.3-->
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+              rel="stylesheet"
+              integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM"
+              crossorigin="anonymous">
+
+<!--    GOOGLE FONTS-->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@300;400;700;900&family=Open+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+<!--    EXTERNAL STYLES-->
+        <link rel="stylesheet" th:href="@{/css/styles.css}">
+
+    </head>
+    <body>
+
+<!--    NAVBAR-->
+        <header>
+            <nav class="navbar">
+                <div class="container-fluid">
+<!--                NAV LOGO-->
+                    <a class="navbar-brand d-flex align-items-center" th:href="@{/}">
+                        <img th:src="@{/images/favicon/apple-touch-icon.png}"
+                             alt="Logo"
+                             width="30"
+                             height="30"
+                             class="d-inline-block align-text-top">
+                        <span class="fw-bolder ps-2 color-light-green" th:text="#{home.page.title}"></span>
+                    </a>
+                </div>
+            </nav>
+        </header>
+
+<!--    GENERAL OVERVIEW OF SITE-->
+        <section class="px-4 py-5 my-5 text-center">
+<!--        MAIN LOGO-->
+            <img class="d-block mx-auto mb-5"
+                 th:src="@{/images/favicon/apple-touch-icon.png}"
+                 alt=""
+                 width="120"
+                 height="120">
+<!--        TITLE-->
+            <h1 class="display-4 fw-bold color-dark-blue"
+                th:text="#{home.page.welcome.message}"></h1>
+<!--        SITE DESCRIPTION-->
+            <div class="col-lg-6 mx-auto">
+                <p class="lead mb-4 color-dark-blue"
+                th:text="#{home.page.site.description}"></p>
+                <div class="d-flex gap-2 justify-content-sm-center pt-2 pb-4">
+<!--            BUTTON WITH LINK TO THE FUNCTIONALITY SECTION-->
+                    <a href="#functionality">
+                        <button type="button" class="btn button-green px-4">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="23" height="23" fill="currentColor" class="bi bi-info-circle" viewBox="0 0 16 16">
+                                <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"/>
+                                <path d="m8.93 6.588-2.29.287-.082.38.45.083c.294.07.352.176.288.469l-.738 3.468c-.194.897.105 1.319.808 1.319.545 0 1.178-.252 1.465-.598l.088-.416c-.2.176-.492.246-.686.246-.275 0-.375-.193-.304-.533L8.93 6.588zM9 4.5a1 1 0 1 1-2 0 1 1 0 0 1 2 0z"/>
+                            </svg>
+                            <span class="ps-2" th:text="#{home.page.button.how.to.use}"></span>
+                        </button>
+                    </a>
+<!--            BUTTON WITH LINK TO THE RUN SECTION-->
+                    <a href="#run-app-section">
+                        <button type="button" class="btn button-green px-4">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="23" height="23" fill="currentColor" class="bi bi-arrow-down-circle" viewBox="0 0 16 16">
+                                <path fill-rule="evenodd" d="M1 8a7 7 0 1 0 14 0A7 7 0 0 0 1 8zm15 0A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM8.5 4.5a.5.5 0 0 0-1 0v5.793L5.354 8.146a.5.5 0 1 0-.708.708l3 3a.5.5 0 0 0 .708 0l3-3a.5.5 0 0 0-.708-.708L8.5 10.293V4.5z"/>
+                            </svg>
+                            <span class="ps-2" th:text="#{home.page.button.let.start}"></span>
+                        </button>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <hr class="mx-auto my-5">
+
+<!--    FUNCTIONALITY-->
+        <section id="functionality" class="container px-4 py-5">
+<!--         FUNCTIONALITY TITLE-->
+            <h2 class="display-6 pb-2 border-bottom text-center fw-bolder color-dark-blue" th:text="#{home.page.functionality.title}"></h2>
+
+            <div class="row g-4 pt-2 pb-3 row-cols-1 row-cols-lg-3">
+<!--                INPUT PARAMETERS DIV-->
+                <div class="feature col">
+<!--                    INPUT PARAMETERS ICON-->
+                    <div class="feature-icon d-inline-flex align-items-center justify-content-center fs-2 mb-3">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" fill="currentColor" class="bi bi-keyboard" viewBox="0 0 16 16">
+                            <path d="M14 5a1 1 0 0 1 1 1v5a1 1 0 0 1-1 1H2a1 1 0 0 1-1-1V6a1 1 0 0 1 1-1h12zM2 4a2 2 0 0 0-2 2v5a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2H2z"/>
+                            <path d="M13 10.25a.25.25 0 0 1 .25-.25h.5a.25.25 0 0 1 .25.25v.5a.25.25 0 0 1-.25.25h-.5a.25.25 0 0 1-.25-.25v-.5zm0-2a.25.25 0 0 1 .25-.25h.5a.25.25 0 0 1 .25.25v.5a.25.25 0 0 1-.25.25h-.5a.25.25 0 0 1-.25-.25v-.5zm-5 0A.25.25 0 0 1 8.25 8h.5a.25.25 0 0 1 .25.25v.5a.25.25 0 0 1-.25.25h-.5A.25.25 0 0 1 8 8.75v-.5zm2 0a.25.25 0 0 1 .25-.25h1.5a.25.25 0 0 1 .25.25v.5a.25.25 0 0 1-.25.25h-1.5a.25.25 0 0 1-.25-.25v-.5zm1 2a.25.25 0 0 1 .25-.25h.5a.25.25 0 0 1 .25.25v.5a.25.25 0 0 1-.25.25h-.5a.25.25 0 0 1-.25-.25v-.5zm-5-2A.25.25 0 0 1 6.25 8h.5a.25.25 0 0 1 .25.25v.5a.25.25 0 0 1-.25.25h-.5A.25.25 0 0 1 6 8.75v-.5zm-2 0A.25.25 0 0 1 4.25 8h.5a.25.25 0 0 1 .25.25v.5a.25.25 0 0 1-.25.25h-.5A.25.25 0 0 1 4 8.75v-.5zm-2 0A.25.25 0 0 1 2.25 8h.5a.25.25 0 0 1 .25.25v.5a.25.25 0 0 1-.25.25h-.5A.25.25 0 0 1 2 8.75v-.5zm11-2a.25.25 0 0 1 .25-.25h.5a.25.25 0 0 1 .25.25v.5a.25.25 0 0 1-.25.25h-.5a.25.25 0 0 1-.25-.25v-.5zm-2 0a.25.25 0 0 1 .25-.25h.5a.25.25 0 0 1 .25.25v.5a.25.25 0 0 1-.25.25h-.5a.25.25 0 0 1-.25-.25v-.5zm-2 0A.25.25 0 0 1 9.25 6h.5a.25.25 0 0 1 .25.25v.5a.25.25 0 0 1-.25.25h-.5A.25.25 0 0 1 9 6.75v-.5zm-2 0A.25.25 0 0 1 7.25 6h.5a.25.25 0 0 1 .25.25v.5a.25.25 0 0 1-.25.25h-.5A.25.25 0 0 1 7 6.75v-.5zm-2 0A.25.25 0 0 1 5.25 6h.5a.25.25 0 0 1 .25.25v.5a.25.25 0 0 1-.25.25h-.5A.25.25 0 0 1 5 6.75v-.5zm-3 0A.25.25 0 0 1 2.25 6h1.5a.25.25 0 0 1 .25.25v.5a.25.25 0 0 1-.25.25h-1.5A.25.25 0 0 1 2 6.75v-.5zm0 4a.25.25 0 0 1 .25-.25h.5a.25.25 0 0 1 .25.25v.5a.25.25 0 0 1-.25.25h-.5a.25.25 0 0 1-.25-.25v-.5zm2 0a.25.25 0 0 1 .25-.25h5.5a.25.25 0 0 1 .25.25v.5a.25.25 0 0 1-.25.25h-5.5a.25.25 0 0 1-.25-.25v-.5z"/>
+                        </svg>
+                    </div>
+<!--                    INPUT PARAMETERS TITLE-->
+                    <h3 class="fs-2 color-dark-blue"
+                    th:text="#{home.page.functionality.input.parameters.title}"></h3>
+<!--                    INPUT PARAMETERS DESCRIPTION-->
+                    <p class="lead color-dark-blue mb-1" th:text="#{home.page.functionality.input.parameters.description}"></p>
+                    <ul>
+                        <li class="lead color-dark-blue" th:text="#{home.page.functionality.input.parameters.description.option.one}"></li>
+                        <li class="lead color-dark-blue" th:text="#{home.page.functionality.input.parameters.description.option.two}"></li>
+                        <li class="lead color-dark-blue" th:text="#{home.page.functionality.input.parameters.description.option.three}"></li>
+                    </ul>
+                </div>
+
+<!--            OUTPUT DIV-->
+                <div class="feature col">
+<!--                OUTPUT ICON-->
+                    <div class="feature-icon d-inline-flex align-items-center justify-content-center fs-2 mb-3">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="45" height="45" fill="currentColor" class="bi bi-arrow-bar-down" viewBox="0 0 16 16">
+                            <path fill-rule="evenodd" d="M1 3.5a.5.5 0 0 1 .5-.5h13a.5.5 0 0 1 0 1h-13a.5.5 0 0 1-.5-.5zM8 6a.5.5 0 0 1 .5.5v5.793l2.146-2.147a.5.5 0 0 1 .708.708l-3 3a.5.5 0 0 1-.708 0l-3-3a.5.5 0 0 1 .708-.708L7.5 12.293V6.5A.5.5 0 0 1 8 6z"/>
+                        </svg>
+                    </div>
+<!--                OUTPUT TITLE-->
+                    <h3 class="fs-2 color-dark-blue"
+                        th:text="#{home.page.functionality.output.title}"></h3>
+<!--                    OUTPUT DESCRIPTION-->
+                    <p class="lead color-dark-blue mb-1" th:text="#{home.page.functionality.output.description}"></p>
+                    <p class="lead color-dark-blue mb-1" th:text="#{home.page.functionality.output.description.example}"></p>
+                    <ul class="mb-1">
+                        <li class="lead color-dark-blue" th:text="#{home.page.functionality.output.description.example.input}"></li>
+                        <li class="lead color-dark-blue" th:text="#{home.page.functionality.output.description.example.output}"></li>
+                    </ul>
+                    <p class="lead color-dark-blue mb-1" th:text="#{home.page.functionality.output.description.sorting}"></p>
+                </div>
+
+<!--            WHITESPACE CHARACTER DIV-->
+                <div class="feature col">
+<!--                WHITESPACE CHARACTER ICON-->
+                    <div class="feature-icon d-inline-flex align-items-center justify-content-center fs-2 mb-3">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="35" height="35" fill="currentColor" class="bi bi-paragraph" viewBox="0 0 16 16">
+                            <path d="M10.5 15a.5.5 0 0 1-.5-.5V2H9v12.5a.5.5 0 0 1-1 0V9H7a4 4 0 1 1 0-8h5.5a.5.5 0 0 1 0 1H11v12.5a.5.5 0 0 1-.5.5z"/>
+                        </svg>
+                    </div>
+<!--                WHITESPACE CHARACTER TITLE-->
+                    <h3 class="fs-2 color-dark-blue"
+                        th:text="#{home.page.functionality.whitespace.character.title}"></h3>
+<!--                WHITESPACE CHARACTER DESCRIPTION-->
+                    <p class="lead color-dark-blue" th:text="#{home.page.functionality.whitespace.character.description}"></p>
+                </div>
+            </div>
+            <div class="d-flex gap-2 justify-content-sm-center pt-2 pb-4">
+<!--            BUTTON WITH LINK TO THE SECTION WITH MAIN FEATURES-->
+                <a href="#run-app-section">
+                    <button type="button" class="btn button-green px-4">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="23" height="23" fill="currentColor" class="bi bi-arrow-down-circle" viewBox="0 0 16 16">
+                            <path fill-rule="evenodd" d="M1 8a7 7 0 1 0 14 0A7 7 0 0 0 1 8zm15 0A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM8.5 4.5a.5.5 0 0 0-1 0v5.793L5.354 8.146a.5.5 0 1 0-.708.708l3 3a.5.5 0 0 0 .708 0l3-3a.5.5 0 0 0-.708-.708L8.5 10.293V4.5z"/>
+                        </svg>
+                        <span class="ps-2" th:text="#{home.page.button.let.start}"></span>
+                    </button>
+                </a>
+            </div>
+        </section>
+
+        <hr class="mx-auto my-5">
+
+<!--    RUN APP SECTION-->
+        <section id="run-app-section" class="container px-4 py-5">
+<!--        RUN APP TITLE-->
+            <h2 class="display-6 pb-2 border-bottom text-center fw-bolder color-dark-blue" th:text="#{home.page.run.section.title}"></h2>
+<!--        TEXT AREAS-->
+            <div class="row g-4 pt-2 pb-3 row-cols-1 row-cols-lg-2">
+                <div class="col text-center">
+                    <h3 class="fs-2 color-dark-blue"
+                        th:text="#{home.page.run.section.input.textarea.title}"></h3>
+<!--                INPUT TEXTAREA-->
+                    <textarea class="form-control"
+                              id="input-textarea"
+                              rows="7"
+                    th:placeholder="#{home.page.run.section.input.textarea.placeholder}"></textarea>
+                </div>
+                <div class="col text-center">
+                    <h3 class="fs-2 color-dark-blue"
+                        th:text="#{home.page.run.section.output.textarea.title}"></h3>
+<!--                OUTPUT TEXTAREA-->
+                    <textarea class="form-control"
+                              id="output-textarea"
+                              rows="7"
+                              th:data-default="#{home.page.run.section.output.textarea.default.message}"
+                              th:text="#{home.page.run.section.output.textarea.default.message}"
+                              disabled></textarea>
+                </div>
+            </div>
+<!--        ALERTS-->
+            <div class="row g-4 pt-1 pb-3 row-cols-1 row-cols-lg-2">
+                <div id="alert-div" class="col text-center">
+                    <div class="alert alert-warning alert-dismissible fade show" role="alert">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-exclamation-circle" viewBox="0 0 16 16">
+                            <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"/>
+                            <path d="M7.002 11a1 1 0 1 1 2 0 1 1 0 0 1-2 0zM7.1 4.995a.905.905 0 1 1 1.8 0l-.35 3.507a.552.552 0 0 1-1.1 0L7.1 4.995z"/>
+                        </svg>
+                        <span id="alert-text"></span>
+                        <button id="alert-button-close" type="button" class="btn-close" aria-label="Close"></button>
+                    </div>
+                </div>
+                <div class="col text-center">
+                </div>
+            </div>
+<!--        BUTTONS-->
+            <div class="row mt-2">
+                <div class="col text-center">
+<!--                RUN BUTTON -->
+                    <a id="run-button"
+                       href="javascript:;">
+                        <button type="button" class="btn button-green px-4">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="23" height="23" fill="currentColor" class="bi bi-play-circle" viewBox="0 0 16 16">
+                                <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"/>
+                                <path d="M6.271 5.055a.5.5 0 0 1 .52.038l3.5 2.5a.5.5 0 0 1 0 .814l-3.5 2.5A.5.5 0 0 1 6 10.5v-5a.5.5 0 0 1 .271-.445z"/>
+                            </svg>
+                            <span class="ps-2" th:text="#{home.page.button.count}"></span>
+                        </button>
+                    </a>
+                </div>
+                <div class="col text-center">
+<!--                RESET BUTTON -->
+                    <a id="reset-button"
+                       href="javascript:;">
+                        <button type="button" class="btn button-green px-4">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="23" height="23" fill="currentColor" class="bi bi-x-circle" viewBox="0 0 16 16">
+                                <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"/>
+                                <path d="M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708z"/>
+                            </svg>
+                            <span class="ps-2" th:text="#{home.page.button.reset}"></span>
+                        </button>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <footer class="text-center">
+            <div class="d-flex justify-content-between align-items-center my-1">
+                <div class="ms-3 color-light-green">
+                    <span>Developed by Ilya Mogilan</span>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                         class="bi bi-c-circle mx-1" viewBox="0 0 16 16">
+                        <path d="M1 8a7 7 0 1 0 14 0A7 7 0 0 0 1 8Zm15 0A8 8 0 1 1 0 8a8 8 0 0 1 16 0ZM8.146 4.992c-1.212 0-1.927.92-1.927 2.502v1.06c0 1.571.703 2.462 1.927 2.462.979 0 1.641-.586 1.729-1.418h1.295v.093c-.1 1.448-1.354 2.467-3.03 2.467-2.091 0-3.269-1.336-3.269-3.603V7.482c0-2.261 1.201-3.638 3.27-3.638 1.681 0 2.935 1.054 3.029 2.572v.088H9.875c-.088-.879-.768-1.512-1.729-1.512Z"/>
+                    </svg>
+                </div>
+                <span class="me-3 color-light-green">2023</span>
+            </div>
+        </footer>
+
+<!--    BOOTSTRAP JS 5.3-->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
+                integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz"
+                crossorigin="anonymous"></script>
+<!--    jQuery-->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.0/jquery.min.js"></script>
+
+        <script type="text/javascript" th:src="@{/js/main.js}"></script>
+    </body>
+</html>
